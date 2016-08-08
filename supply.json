@@ -1,0 +1,96 @@
+{
+  "name": "performance-metrics",
+  "description": "Computes performance metrics (accuracy, precision, recall) for streamed-in classifications.",
+  "version": "1.0.2",
+  "scope": "kapow",
+  "script": "index.js",
+  "repository": "https://github.com/dataminingsupply/performance-metrics",
+  "license": {
+    "type": "MIT",
+    "year": 2016,
+    "copyright": "Kapil Garg"
+  },
+  "public": true,
+  "tags": [
+    "machine learning",
+    "AI",
+    "statistics",
+    "accuracy",
+    "precision",
+    "recall",
+    "F1"
+  ],
+  "thumbnail": "performance.png",
+  "inputs": [
+    {
+      "name": "predicted",
+      "type": "string",
+      "description": "value that was predicted by algorithm"
+    },
+    {
+      "name": "expected",
+      "type": "string",
+      "description": "expected value of prediction from algorithm"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "performance",
+      "type": "array",
+      "description": "array with single object containing accuracy, precision, recall, and F1 for each class separately and aggregated",
+      "default": []
+    }
+  ],
+  "parameters": [
+    {
+      "name": "classifications",
+      "type": "array",
+      "description": "array of strings corresponding to class labels",
+      "default": []
+    }
+  ],
+  "tests": [
+    {
+      "file": "binary.json",
+      "inputs": {
+        "predicted": "predicted",
+        "expected": "expected"
+      },
+      "parameters": {
+        "classifications": [
+          "<=50K",
+          ">50K"
+        ]
+      }
+    },
+    {
+      "file": "multiclass.json",
+      "inputs": {
+        "predicted": "predicted",
+        "expected": "expected"
+      },
+      "parameters": {
+        "classifications": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "14",
+          "15",
+          "16"
+        ]
+      }
+    }
+  ],
+  "supplies": {},
+  "breadcrumbs": {
+    "performance-metrics": "."
+  },
+  "path": "./dms_supplies"
+}
