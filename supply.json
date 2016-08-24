@@ -1,7 +1,7 @@
 {
   "name": "performance-metrics",
   "description": "Computes performance metrics (accuracy, precision, recall) for streamed-in classifications.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "scope": "kapow",
   "script": "index.js",
   "repository": "https://github.com/dataminingsupply/performance-metrics",
